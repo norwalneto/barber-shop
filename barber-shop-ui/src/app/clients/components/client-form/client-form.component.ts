@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { NgxMaskDirective } from 'ngx-mask';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { ClientModelForm } from '../../client.models';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-client-form',
+  standalone: true,
   imports: [
     FormsModule,
     MatInputModule,
@@ -15,8 +16,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     NgxMaskDirective
   ],
+  providers: [provideNgxMask()],
   templateUrl: './client-form.component.html',
-  styleUrl: './client-form.component.scss'
+  styleUrls: ['./client-form.component.scss']
 })
 export class ClientFormComponent {
 
