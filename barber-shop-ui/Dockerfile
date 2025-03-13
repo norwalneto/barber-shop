@@ -10,10 +10,10 @@ WORKDIR $INSTALL_PATH
 
 COPY package*.json ./
 
-RUN yarn global add @angular/cli@19.1.5
-#RUN npm i -g @angular/cli@19.1.5  --save-dev
+#RUN yarn global add @angular/cli@19.1.5
+RUN npm i -g @angular/cli@19.1.5  --save-dev
 
-RUN yarn install
-#RUN npm install
+#RUN yarn install
+RUN npm install --force
 
 COPY . .
